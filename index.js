@@ -36,15 +36,16 @@
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
+const dotenv = require('dotenv')
 const app = express();
 const port = 3001;
 app.use(express.json());
 app.use(cors());
-
+dotenv.config();
 // Function to fetch video details
 const getVideoDetails = async (videoId) => {
   try {
-    const apiKey = 'AIzaSyB0hmp6Etrcem3OuvB-_M7zI_QeWthrD2o';
+    const apiKey = process.env.NODE_YOUTUBE_API_KEY;
     const response = await axios.get(`https://www.googleapis.com/youtube/v3/videos?id=${videoId}&key=${apiKey}&part=snippet`);
     if (response.data.items.length > 0) {
       const videoTitle = response.data.items[0].snippet.title;
