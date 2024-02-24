@@ -1,38 +1,3 @@
-// const express = require('express');
-// const cors = require('cors');
-// const axios = require('axios')
-// const app = express();
-// const port = 3001;
-// app.use(express.json())
-// app.use(cors());
-
-// app.get('/fetch-thumbnail', async (req, res) => {
-//   try {
-//     const videoId = req.query.videoId;
-//     const quality = req.query.quality || 'maxresdefault';
-//     const response = await axios.get(`https://i.ytimg.com/vi/${videoId}/${quality}.jpg`, {
-//       responseType: 'arraybuffer',
-//     });
-//     const data = Buffer.from(response.data, 'binary');
-//     // Set appropriate headers for downloading the image
-//     res.setHeader('Content-Type', 'image/jpeg');
-//     res.setHeader('Content-Disposition', 'attachment; filename=thumbnail.jpg');
-//     res.setHeader('Content-Length', data.length);
-//     res.end(data);
-//     console.log(data);
-//   } catch (error) {
-//     console.error('Error fetching image', error);
-//     res.status(500).send('Internal Server Error');
-//   }
-// });
-
-
-
-// app.listen(port, () => {
-//   console.log(`Server is running on port ${port}`);
-// });
-
-
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
